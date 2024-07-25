@@ -1,0 +1,6 @@
+SELECT time::DATE as date, user_id, COUNT (order_id) AS daily_order,
+rank() OVER(PARTITION BY user_id  ORDER BY time::DATE) as activ_day_number,
+LAG(COUNT (order_id),1) OVER(PARTITION BY user_id  ORDER BY time::DATE) AS last_day_orders
+FROM user_actions
+GROUP BY 1,2 
+LIMIT 100

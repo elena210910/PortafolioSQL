@@ -1,0 +1,23 @@
+SELECT t1.user_id, ROUND(AVG(EXTRACT(EPOCH FROM t1.time_diff))/3600)::INTEGER AS hours_between_orders
+FROM
+(SELECT user_id, order_id, time, order_number, time_lag,
+AGE(time,time_lag) AS time_diff
+FROM
+(SELECT user_id, order_id, time, 
+row_number() OVER(PARTITION BY user_id ORDER BY time) AS order_number,
+LAG(time) OVER(PARTITION BY user_id ORDER BY time) as time_lag
+
+FROM user_actions
+WHERE order_id NOT IN (SELECT order_id
+                    FROM user_actions 
+                    WHERE action = 'cancel_order'))t
+
+ORDER BY user_id, order_number)t1    
+WHERE order_id IN( SELECT order_id
+                FROM user_actions 
+                 WHERE action = 'create_order')
+GROUP BY 1
+HAVING COUNT(order_id) > 1
+ORDER BY t1.user_id
+                     
+LIMIT 1000       

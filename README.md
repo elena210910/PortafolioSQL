@@ -2,6 +2,7 @@
 Este repositorio contiene mis proyectos de análisis de datos utilizando SQL. Los proyectos presentados aquí se basan en problemas y desafíos 
 que he resuelto para una cadena de tiendas de productos.
 
+# proyecto 1
 # Análisis de las acciones de los usuarios y los pedidos
 [CODIGO AQUI](https://github.com/elena210910/PortafolioSQL/blob/main/projectSQL_1)
 
@@ -37,3 +38,6 @@ Aquí está mi enfoque paso a paso para resolver esta tarea:
 4. **Cálculo de indicadores clave:** Con las tablas unidas, calculo varios indicadores útiles, como el número total de pedidos, la cantidad promedio de productos en cada pedido, el costo total de todas las compras, el costo promedio del pedido, el costo mínimo del pedido y el costo máximo del pedido.
 
 Por lo tanto, la tabla t2 es fundamental para toda la consulta, y todas las demás operaciones (incluyendo la unión con la tabla t1 y el cálculo de los indicadores clave) se construyen alrededor de los datos de esta tabla. Por lo tanto, se puede decir que la tabla t2 es decisiva para esta tarea. 😊
+
+# proyecto 2
+# [README](https://github.com/elena210910/PortafolioSQL/blob/main/code_sql_3/README_3.md) 

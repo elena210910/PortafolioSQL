@@ -1,6 +1,7 @@
 **Esta consulta SQL tiene como objetivo calcular el tiempo promedio entre pedidos para cada usuario.**
 
 --La consulta se divide en varias partes:--
+[CODIGO AQUI](https://github.com/elena210910/PortafolioSQL/blob/main/code_sql_3/code)
 
 En la subconsulta t, 
 se seleccionan todos los pedidos de la tabla user_actions que no han sido cancelados.
